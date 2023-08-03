@@ -7,7 +7,7 @@ import { selectOpenId } from '../utils/sqls.js'
 const login = async (req, res) => {
   const { code } = req.query;
   const data = await axios.get(
-    `https://api.weixin.qq.com/sns/jscode2session?appid=wx379c08f8a82f4d41&secret=f74b2dc0560e653f95fb1c8dba3d7128&js_code=${code}&grant_type=authorization_code`
+    `https://api.weixin.qq.com/sns/jscode2session?appid=wx379c08f8a82f4d41&secret=11111&js_code=${code}&grant_type=authorization_code`
   );
   const { session_key, openid } = data.data;
   let userInfo = await find(selectOpenId(openid))
